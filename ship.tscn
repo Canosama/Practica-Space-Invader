@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://m1m2lkr4k2yl"]
+
+[ext_resource type="Script" path="res://ship.gd" id="1_t2jyy"]
+[ext_resource type="Texture2D" uid="uid://b06524ixbvwdb" path="res://Spaceship-shooter-gamekit/spritesheets/ship.png" id="2_nbruv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1nfb"]
+size = Vector2(87.3929, 134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4jbm"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwenl"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvqeu"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp027"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uc3t"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mkwd"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd4ch"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfqvx"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6adce"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(48, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1as4w"]
+atlas = ExtResource("2_nbruv")
+region = Rect2(64, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11760"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4jbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwenl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvqeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp027")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uc3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mkwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd4ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfqvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6adce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1as4w")
+}],
+"loop": true,
+"name": &"Ship",
+"speed": 10.0
+}]
+
+[node name="ship" type="CharacterBody2D"]
+position = Vector2(575, 531)
+scale = Vector2(0.881078, 0.671278)
+script = ExtResource("1_t2jyy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.567383, 0)
+shape = SubResource("RectangleShape2D_v1nfb")
+
+[node name="PosBala" type="Marker2D" parent="."]
+position = Vector2(0, -101.299)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5.49405, 5.49405)
+sprite_frames = SubResource("SpriteFrames_11760")
+animation = &"Ship"
+frame_progress = 0.355276
